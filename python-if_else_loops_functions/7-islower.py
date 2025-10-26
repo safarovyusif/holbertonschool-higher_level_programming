@@ -1,10 +1,4 @@
 #!/usr/bin/python3
-def uppercase(str):
-    res = ""
-    for c in str:
-        o = ord(c)
-        if 97 <= o <= 122:
-            res += chr(o - 32)
-        else:
-            res += c
-    print("{}".format(res))
+def islower(c):
+    """Return True if c is a lowercase letter, otherwise False."""
+    return isinstance(c, str) and len(c) == 1 and ord('a') <= ord(c) <= ord('z')
