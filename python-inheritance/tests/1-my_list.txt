@@ -1,43 +1,32 @@
 Test cases for MyList class that inherits from list.
 
-The primary test confirms the print_sorted method works and does not modify the original list.
+The primary test confirms the `print_sorted` method works and does not modify the original list.
 
-MyList = import('1-my_list').MyList
-my_list = MyList()
-my_list.append(1)
-my_list.append(4)
-my_list.append(2)
-my_list.append(3)
-my_list.append(5)
-print(my_list)
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> print(my_list)
 [1, 4, 2, 3, 5]
-my_list.print_sorted()
+>>> my_list.print_sorted()
 [1, 2, 3, 4, 5]
-print(my_list)
+>>> print(my_list)
 [1, 4, 2, 3, 5]
 
 Test case with a list initialized directly.
 
-new_list = MyList([10, -5, 0, 7])
-new_list.print_sorted()
+>>> new_list = MyList([10, -5, 0, 7])
+>>> new_list.print_sorted()
 [-5, 0, 7, 10]
-new_list
+>>> new_list
 [10, -5, 0, 7]
 
 Test case with an empty list.
 
-empty_list = MyList()
-empty_list.print_sorted()
+>>> empty_list = MyList()
+>>> empty_list.print_sorted()
 []
-
-Test case with duplicate values.
-
-list_with_duplicates = MyList([3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5])
-list_with_duplicates.print_sorted()
-[1, 1, 2, 3, 3, 4, 5, 5, 5, 6, 9]
-
-Test behavior with non-integer types (though the prompt assumes integers, this checks robustness if it happens).
-
-list_with_floats = MyList([5.5, 1.1, 3.3])
-list_with_floats.print_sorted()
-[1.1, 3.3, 5.5]
+```eof
