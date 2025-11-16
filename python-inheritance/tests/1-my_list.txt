@@ -111,4 +111,4 @@ Test case #5: A invalid test case of tuples
     AttributeError: 'tuple' object has no attribute 'print_sorted'
 
     >>> print(my_list)
-    (1, 2) 
+    (1, 2)
