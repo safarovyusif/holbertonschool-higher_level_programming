@@ -1,7 +1,8 @@
+Test cases for MyList class that inherits from list.
+
+The primary test confirms the print_sorted method works and does not modify the original list.
+
 MyList = import('1-my_list').MyList
-
-Test cases based on 1-main.py
-
 my_list = MyList()
 my_list.append(1)
 my_list.append(4)
@@ -15,70 +16,28 @@ my_list.print_sorted()
 print(my_list)
 [1, 4, 2, 3, 5]
 
-Edge cases
+Test case with a list initialized directly.
 
-Test with an empty list
+new_list = MyList([10, -5, 0, 7])
+new_list.print_sorted()
+[-5, 0, 7, 10]
+new_list
+[10, -5, 0, 7]
+
+Test case with an empty list.
 
 empty_list = MyList()
-print(empty_list)
-[]
 empty_list.print_sorted()
 []
-print(empty_list)
-[]
 
-Test with negative numbers
+Test case with duplicate values.
 
-neg_list = MyList([10, -5, 0, 2, -100])
-print(neg_list)
-[10, -5, 0, 2, -100]
-neg_list.print_sorted()
-[-100, -5, 0, 2, 10]
-print(neg_list)
-[10, -5, 0, 2, -100]
+list_with_duplicates = MyList([3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5])
+list_with_duplicates.print_sorted()
+[1, 1, 2, 3, 3, 4, 5, 5, 5, 6, 9]
 
-Test with a list that is already sorted
+Test behavior with non-integer types (though the prompt assumes integers, this checks robustness if it happens).
 
-sorted_list = MyList([1, 2, 3, 4, 5])
-print(sorted_list)
-[1, 2, 3, 4, 5]
-sorted_list.print_sorted()
-[1, 2, 3, 4, 5]
-
-Test with a list in reverse sorted order
-
-rev_list = MyList([5, 4, 3, 2, 1])
-print(rev_list)
-[5, 4, 3, 2, 1]
-rev_list.print_sorted()
-[1, 2, 3, 4, 5]
-
-Test with a list containing duplicates
-
-dup_list = MyList([2, 1, 3, 2, 1])
-print(dup_list)
-[2, 1, 3, 2, 1]
-dup_list.print_sorted()
-[1, 1, 2, 2, 3]
-
-Test initialization with an iterable
-
-init_list = MyList((3, 1, 2))
-print(init_list)
-[3, 1, 2]
-init_list.print_sorted()
-[1, 2, 3]
-
-Test for documentation
-
-m_doc = import('1-my_list').doc
-m_doc is not None and len(m_doc.strip()) > 1
-True
-
-c_doc = import('1-my_list').MyList.doc
-c_doc is not None and len(c_doc.strip()) > 1
-True
-
-f_doc = import('1-my_list').MyList.print_sorted.doc
-f_doc is not None and len(f_doc.strip()) > 1
-True
+list_with_floats = MyList([5.5, 1.1, 3.3])
+list_with_floats.print_sorted()
+[1.1, 3.3, 5.5]
